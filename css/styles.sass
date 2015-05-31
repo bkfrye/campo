@@ -7,12 +7,11 @@
 //  Global
 //--------------------------------------------------------------
 
-html
+html,body
     margin: 0
     height: 100%
 
 body
-    background: $white
     font: 100% $helvetica
     font-size: 15/22pt 
 
@@ -36,25 +35,25 @@ ul
         list-style: none 
 
 h1
-    font: 40/48pt
+    font: 40/48px
     color: $black
 
 h2, h3
     color: $blue
 
 h2
-    font: 32/39pt
+    font: 32/39px
     font-weight: 300
     
 h3
-    font: 24/29pt
+    font: 24/29px
 
 h4
-    font: 22/27pt
+    font: 22/27px
     color: $black
     
 h5
-    font: 16/18pt
+    font: 16/18px
     color: $green
     
 nav 
@@ -75,14 +74,65 @@ nav
 //--------------------------------------------------------------
 
 header
+    height: 135px
+    width: 100%
+    
+    #logo
+        border-right: $border
     nav
+        float:right
+        
         ul
+            padding: 8px
+                
             li
-
+                text-transform: uppercase
                 display: inline
+                padding: 2px 8px 2px 8px
+                    
+    .utility-nav
+        background-color: $white
+        width: 100%
+        border: $border
+        height: 50%
+        line-height: 25px
 
+        
+        ul
+            
+            div
+                float: right
+                
+            a:link, a:visited
+                font-size: 14px
+                font-weight: 300
+                color: #4d4d4c
+            
+            li
+                
+                
+                img
+                    border: $border
 
+                
+                a
+                
 
+        
+
+    .main-nav
+        border: $border
+        width: 100%
+        
+        ul
+            float: right
+                
+            a:link, a:visited
+                font-size: 16px
+                color: $black
+        
+    
+    
 
 
 
@@ -90,7 +140,14 @@ header
 //  Main
 //--------------------------------------------------------------
 
-
+.hero
+    margin-top: 160px
+    height: 300px
+    background-color: $black
+    color: $white
+    
+    h1
+        color: $white
 
 
 
