@@ -13,7 +13,7 @@ html,body
 
 body
     font: 100% $helvetica
-    font-size: 15/22pt 
+    font-size: 15/22px
 
 .container
     max-width: 960px
@@ -25,7 +25,8 @@ footer,
 header,
 main,
 nav,
-section
+section,
+ul
     display: block
     margin: 0
     padding: 0
@@ -57,12 +58,13 @@ h5
     color: $green
     
 nav 
+    
     li
         text-transform: uppercase
 
     a:link
-
         text-decoration: none
+
             
     
     
@@ -74,61 +76,99 @@ nav
 //--------------------------------------------------------------
 
 header
+    position: relative
     height: 135px
     width: 100%
-    
+
     #logo
         border-right: $border
-    nav
-        float:right
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 999
         
+    nav
+        float: right
+
         ul
-            padding: 8px
+            /*padding: 8px
                 
             li
                 text-transform: uppercase
                 display: inline
-                padding: 2px 8px 2px 8px
+                /*padding: 2px 11px 2px 11px
                     
     .utility-nav
+        position: relative
         background-color: $white
         width: 100%
-        border: $border
-        height: 50%
-        line-height: 25px
+        border-bottom: $border
+        height: 40% 
+        line-height: 60px
 
-        
+    
         ul
-            
-            div
-                float: right
+            margin: 0
+            float: right
                 
-            a:link, a:visited
-                font-size: 14px
-                font-weight: 300
-                color: #4d4d4c
+            li
+                float: left
+
+                a
+                    font-size: 12px
+                    color: #4d4d4c
+        
+        .utility-link-icons
+
             
             li
                 
-                
-                img
-                    border: $border
-
-                
                 a
-                
+                    display: inline-block
+                    border-left: $border
+                    height: 100%
+                    width: 60px
+                    
+                    img
+                        display: block
+                        position: relative
+                        margin: 0 auto
+                        top: 30%
 
+                    
+                #search
+                    background-color: $green
+                    
+                    img
+                        margin: 0 auto
+
+                    
+
+            
+                  
         
 
+
+            
+            
+            
+            
+            
+            
+            
     .main-nav
-        border: $border
+        position: relative
+        display: block
         width: 100%
+        height: 60%
         
         ul
             float: right
+            position: relative
+            top: 40%
                 
             a:link, a:visited
-                font-size: 16px
+                font-size: 14px
                 color: $black
         
     
