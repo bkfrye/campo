@@ -1,0 +1,26 @@
+{
+  "name": "campo",
+  "version": "1.0.0",
+  "description": "new media project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/bkfrye/campo"
+  },
+  "author": "brandon frye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bkfrye/campo/issues"
+  },
+  "homepage": "https://github.com/bkfrye/campo",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-minify-css": "^1.1.3",
+    "gulp-sass": "^2.0.1",
+    "node-bourbon": "^4.2.2"
+  }
+}
