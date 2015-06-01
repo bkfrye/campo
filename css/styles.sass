@@ -7,17 +7,12 @@
 //  Global
 //--------------------------------------------------------------
 
-*, 
-*:after,
-*:before
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-
-
 html,body
     margin: 0
     height: 100%
+    
+a
+    text-decoration: none
 
 body
     font: 100% $helvetica
@@ -29,19 +24,19 @@ body
     //justify-content: center
         
     position: relative
-    max-width: 960px
+    max-width: 1080px
     margin: 0 auto
     padding: 8px
     
     
     
-//article,
+article,
 aside,
 footer,
 header,
 main,
 nav,
-//section,
+section,
 ul
     display: block
     margin: 0
@@ -52,42 +47,60 @@ ul
         list-style: none 
 
 h1
-    font-size: 40/48px
+    font-size: 40px
+    line-height: 48px
     color: $black
 
 h2, h3
     color: $blue
 
 h2
-    font-size: 32/39px
+    font-size: 32px
+    line-height: 39px
     font-weight: 300
     
 h3
-    font-size: 24/29px
+    font-size: 24px
+    line-height: 29px
 
 h4
-    font-size: 22/27px
+    font-size: 22px
+    line-height: 27px
     color: $black
     
 h5
-    font-size: 16/18px
+    font-size: 16px
+    line-height: 18px
     color: $green
+    
+p
+    font-size: 15px
+    line-height: 22px
+    font-weight: 300
     
 nav 
     
     li
         text-transform: uppercase
 
-    a:link
-        text-decoration: none
-
             
     
 .btn
     background-color: $blue
     color: $white
-    text-decoration: none
     padding: 8px 12px
+    
+.btn:hover
+    background-color: $yellow
+    color: $blue
+    
+    
+    
+    
+//--------------------------------------------------------------
+//  Flexbox Normalize
+//--------------------------------------------------------------    
+    
     
     
 article,
@@ -101,8 +114,7 @@ aside
 //  Header
 //--------------------------------------------------------------
 
-header
-    position: relative
+#site-header
     height: 135px
     width: 100%
 
@@ -224,6 +236,7 @@ header
     p
         color: $yellow
         margin: 0
+        
     
     h1
         color: $white
@@ -246,8 +259,19 @@ header
 
 main
     
-
-
+    .border-bottom
+        border-bottom: $border
+    
+    
+    header
+        position: relative
+        
+        .view-all-link
+            position: absolute
+            top: 12px
+            right: 0
+            font-size: 14px
+            color: #4d4d4c
         
 
 //------------------------------------
@@ -270,12 +294,44 @@ article
 //------------------------------------
 //  Aside - Public Input, Quick Links, Latest News
 
+.public-input
+    ul
+        
+        li
+            margin: 26px 0 26px 0;
+            
+            a
+                color: $green
+
+
+
+.quick-links
+    
+    ul
+        margin: 0
+        
+        
+        li
+            margin-bottom: 8px
+            padding: 0
+            
+            a
+                display: block
+                padding: 12px 20px
+                font-weight: 300
+                font-size: 14px
+                    
+            
+                img
+                    float: right
+
 
 //--------------------------------------------------------------
 //  Connect With Us
 //--------------------------------------------------------------
 
 .connect-with-us
+    margin: 0
     background-color: $white
 
 
