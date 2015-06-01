@@ -7,6 +7,14 @@
 //  Global
 //--------------------------------------------------------------
 
+*, 
+*:after,
+*:before
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+
 html,body
     margin: 0
     height: 100%
@@ -16,16 +24,24 @@ body
     font-size: 15/22px
 
 .container
+    display: flex
+    flex-direction: row  
+    //justify-content: center
+        
+    position: relative
     max-width: 960px
     margin: 0 auto
+    padding: 8px
     
-article,
+    
+    
+//article,
 aside,
 footer,
 header,
 main,
 nav,
-section,
+//section,
 ul
     display: block
     margin: 0
@@ -74,7 +90,10 @@ nav
     padding: 8px 12px
     
     
-
+article,
+section,
+aside
+    margin: 0 6px
 
 
 
@@ -170,16 +189,16 @@ header
                 color: $black
         
     
-    
 
 
 
 //--------------------------------------------------------------
-//  Main
+//  Hero Area
 //--------------------------------------------------------------
 
 .hero
     height: 45%
+    width: 100%
     @include background( url(/img/placeholder.jpg) no-repeat center center)
     background-size: cover
     color: $white
@@ -187,10 +206,19 @@ header
     
     
     .hero-info
-        padding-top: 25% 
+        position: absolute
+        max-width: 960px
+        padding: 8px
+        width: 100%
+        bottom: 10%
+        left: 0
+        right: 0
+        margin: 0 auto
+
     
     .slider-nav
-        float: right    
+        position: absolute
+        right: 0
     
     
     p
@@ -205,8 +233,50 @@ header
     #learn-btn
         font-size: 12px
         padding: 8px 18px
+        
+        
+        
 
 
+
+//--------------------------------------------------------------
+//  Main
+//--------------------------------------------------------------
+    
+
+main
+    
+
+
+        
+
+//------------------------------------
+//  Welcome
+
+article
+    
+    h2
+        color: $black
+
+
+
+
+//------------------------------------
+//  Upcoming Events
+
+
+
+
+//------------------------------------
+//  Aside - Public Input, Quick Links, Latest News
+
+
+//--------------------------------------------------------------
+//  Connect With Us
+//--------------------------------------------------------------
+
+.connect-with-us
+    background-color: $white
 
 
 
