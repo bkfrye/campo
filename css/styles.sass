@@ -20,12 +20,11 @@ body
 .container
     @include display(flex)
     @include flex-direction(row) 
-
-        
+   
     position: relative
     max-width: 1080px
     margin: 0 auto
-    padding: 14px
+//    padding: 14px
     
     
     
@@ -97,15 +96,24 @@ nav
     
     
 //--------------------------------------------------------------
-//  Flexbox Normalize
+//  add cushion between columns
 //--------------------------------------------------------------    
     
     
     
-article,
+
 section,
 aside
-    margin: 0 10px
+    margin-left: 10px
+    
+article
+    margin-right: 10px
+    
+#sign-up
+    margin-right: 15px
+    
+#social-media-links
+    margin-left: 15px
 
 
 
@@ -354,10 +362,6 @@ main
             
 
 
-    .text-center
-        //text-align: center
-
-
 //------------------------------------
 //  Aside - Public Input, Quick Links, Latest News
 
@@ -403,6 +407,110 @@ main
 .connect-with-us
     margin: 0
     background-color: $white
+    padding: 16px 0 32px 0
+    
+    h2
+        text-align: center
+    
+    .container
+
+        .card
+            @include flex-basis(50%)
+            background: #fff
+            padding: 30px
+            border: $border
+            
+            h3,h4
+                font-weight: 300
+                margin-top: 0
+                
+        #sign-up
+
+
+            form
+                width: 100%
+                
+                input
+                    position: relative
+                    width: 100%
+                    margin-bottom: 12px
+                    padding-left: 1.8em
+                    height: 47px
+                    font-size: 14px
+                    background-color: $white
+                    border: 0
+                    
+                    @include placeholder
+                        font-size: 14px
+
+                        
+                    
+            
+        #social-media-feed
+            
+            
+                
+            .name
+                display: inline-block
+                width: 49.5%  
+                padding: 0
+                margin: 0
+                
+                a:link, a:visited
+                    color: $blue
+                    display: block
+                    padding: 0 0 10px
+                    border-bottom: $border
+                
+                h3
+                    text-align: center
+                    padding-top: 0
+                    
+                .active
+                    border-bottom: 4px solid $blue
+                        //almost right...
+                            
+                .inactive
+    
+                    a:link, a:visited
+                        color: $grey
+                
+
+            h4
+                color: $grey
+                    
+            #like-btn
+                float: right
+                background-color: $white 
+                color: #4d4d4c
+                font-weight: 300
+                font-size: 14px
+            
+            .feed 
+                margin: 0
+                
+                img
+                    width: 68px
+                    height: auto
+                    border: $border
+                    float: left
+                    margin-right: 16px
+                    
+                p
+                    margin: 0
+                    color: $grey
+                    line-height: 22px
+                
+            
+                
+            
+                
+                    
+                
+
+
+                
+
 
 
 
