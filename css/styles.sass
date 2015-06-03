@@ -11,6 +11,9 @@ html,body
     margin: 0
     height: 100%
     
+    @include tablet
+        overflow-x: hidden
+    
 a
     text-decoration: none
 
@@ -20,16 +23,15 @@ body
 .container
     @include display(flex)
     @include flex-direction(row) 
+    
    
     position: relative
     max-width: 1024px
     margin: 0 auto
 
     @include tablet
-        padding: 8px
+        padding: 10px
         
-    @include phone
-        padding: 4px
     
     
         
@@ -113,11 +115,17 @@ section,
 aside
     margin-left: 10px
     
+    @include tablet
+        margin-left: 6px
+    
 article
     margin-right: 10px
     
 #sign-up
     margin-right: 15px
+    
+    @include tablet
+        margin: 0
     
 #social-media-links
     margin-left: 15px
@@ -133,6 +141,11 @@ article
     height: 135px
     width: 100%
     position: relative
+        
+    @include tablet
+        height: 90px
+        
+    
 
     #logo
         border-right: $border
@@ -140,6 +153,24 @@ article
         top: 0
         left: 0
         z-index: 999
+        
+        
+
+            
+        @include tablet
+            height: 90px
+            width: auto
+            
+    @media (max-width: 892px)
+            #logo
+                height: 37px
+                width: auto
+            
+            .main-nav
+                clear: both
+                display: block
+                margin: 0 auto
+
 
         
     li
@@ -158,12 +189,18 @@ article
             padding-top: 20px
             float: right
                 
+            @include tablet
+                margin: 0 9em
+                
             li
-                font-size: 14px
+                font-size: 12px
                 font-weight: 300
                 margin-right: 18px
                 
-                
+                @media (max-width:1206px)
+                    font-size: 11px
+                    margin-right: 13px
+            
 
                 a:link, a:visited
                     color: #4d4d4c
@@ -191,12 +228,18 @@ article
                             border-left: $border
                             height: 100%
                             width: 60px
+                            
+                            @include tablet
+                                width: 30px
 
 
                             img
                                 display: block
                                 margin: 0 auto
                                 padding: 18px
+                                
+                                @include tablet
+                                    padding: 8px
 
                         #search
                             background-color: $green
@@ -216,8 +259,16 @@ article
                 
             li
                 margin: 4px 26px 4px 0
-                font-size: 16px
+                font-size: 14px
                 line-height: 80px
+                
+                @media (min-width: 893px) and (max-width:1206px)
+                    font-size: 11px
+                    margin: 0 18 0 0 
+                    
+            @media (max-width: 892px)
+                li
+                    font-size: 12px
                 
                 a:link, a:visited
                     color: $black 
@@ -295,6 +346,23 @@ main
             right: 0
             font-size: 14px
             color: $grey
+
+@include phone
+    .container
+        @include flex-wrap(wrap)
+            
+    h2
+        font-size: 18px
+        line-height: 23px
+            
+@include tablet
+            
+    h2
+        font-size: 24px
+        line-height: 27px
+        
+    aside
+        margin-right: 8px
         
 
 //------------------------------------
@@ -410,10 +478,21 @@ main
                 padding: 12px 20px
                 font-weight: 300
                 font-size: 14px
+                
+            @include tablet
+                a
+                    font-size: 22px
+                    padding: 18px 16px 0 16px
+                    height: 47px
+                    
+                img
+                    margin-top: 8px
                     
             
                 img
                     float: right
+                        
+
 
 
 //--------------------------------------------------------------
@@ -429,12 +508,18 @@ main
         text-align: center
     
     .container
+    
+        @include tablet
+            display: block
+            width: 75%
 
         .card
             @include flex-basis(50%)
             background: #fff
             padding: 30px
             border: $border
+            
+            
             
             h3,h4
                 font-weight: 300
@@ -474,13 +559,19 @@ main
             
         #social-media-feed
             
-            
+            @include phone
+                h3
+                    font-size: 18px
+                    display: inline-block
+                    width: 100%
                 
             .name
                 display: inline-block
                 width: 49.5%  
                 padding: 0
                 margin: 0
+                
+            
                 
                 a:link, a:visited
                     color: $blue
@@ -500,6 +591,8 @@ main
     
                     a:link, a:visited
                         color: $grey
+        
+        
                 
 
             h4
