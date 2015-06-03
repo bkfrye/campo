@@ -132,7 +132,11 @@ article
 #social-media-links
     margin-left: 15px
 
+.for-mobile-only
+    display: none
 
+    @include phone
+        display: block
 
 //--------------------------------------------------------------
 //  Header-- *complete chaos*
@@ -153,7 +157,7 @@ article
     @media (min-width:767px) and (max-width:940px)
         height: 60px
         
-    
+
 
     #logo
         border-right: $border
@@ -163,9 +167,10 @@ article
         z-index: 999 
         height: 100%
         
-
-
+        @include phone
+            z-index:0
         
+
     li
         text-transform: uppercase
         display: inline
@@ -179,6 +184,9 @@ article
         
         @media (min-width:767px) and (max-width:940px)
             height: 100%
+            
+        @include phone
+            display: none
     
         ul
             margin: 0 15em
@@ -260,6 +268,9 @@ article
         width: 100%
         height: 60%
         
+        @include phone
+            display: none
+        
         ul
             float: right
             position: relative
@@ -299,6 +310,181 @@ article
                 @media (min-width:767px) and (max-width:940px)
                     font-size: 12px
                     
+                    
+                    
+//--------------------------------------------------------------
+//  Mobile nav
+//--------------------------------------------------------------
+                    
+.mobile-container 
+    position: relative
+    height: 100%
+    -webkit-overflow-scrolling: touch 
+        
+.mobile-toggle 
+    right: 9999px
+    position: absolute
+    top: -9999px
+
+
+
+
+.mobile-toggle-label 
+
+    cursor: pointer
+    display: block
+    position: fixed
+    z-index: 99
+    width: 57px
+    height: 57px
+    background-color: rgba(255,255,255,0.5)
+    transition: all 400ms cubic-bezier(.39,.04,.3,.96)
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    -o-user-select: none
+    user-select: none
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) 
+
+
+.mobile-toggle-label:active 
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) 
+
+
+.mobile-toggle-label .mobile-toggle-icon, 
+.mobile-toggle-label .mobile-toggle-icon:before, 
+.mobile-toggle-label .mobile-toggle-icon:after 
+    position: absolute
+    top: 50%
+    left: 50%
+    height: 4px
+    width: 36px
+    cursor: pointer
+    background: $green
+    display: block
+    content: ''
+    transition: all 500ms cubic-bezier(.39,.04,.3,.96) 
+
+
+
+
+.mobile-toggle-label .mobile-toggle-icon 
+    transform: translate3d(-50%, -4px, 0)
+    -webkit-transform: translate3d(-50%, -4px, 0) 
+
+
+.mobile-toggle-label .mobile-toggle-icon:before 
+    transform: translate3d(-50%, -14px, 0)
+    -webkit-transform: translate3d(-50%, -14px, 0) 
+
+
+.mobile-toggle-label .mobile-toggle-icon:after 
+    transform: translate3d(-50%, 10px, 0)
+    -webkit-transform: translate3d(-50%, 10px, 0) 
+
+
+.mobile-toggle-label 
+    right: 15px
+    left: auto 
+
+
+
+.mobile-toggle:checked ~ .mobile-toggle-label:not
+    opacity: 0
+    z-index: -1 
+
+
+
+.mobile-toggle:checked ~ .mobile-toggle-label .mobile-toggle-icon
+    background-color: transparent 
+
+
+.mobile-toggle:checked ~ .mobile-toggle-label .mobile-toggle-icon:before, 
+.mobile-toggle:checked ~ .mobile-toggle-label .mobile-toggle-icon:after  
+    top: 0 
+
+
+.mobile-toggle:checked ~ .mobile-toggle-label .mobile-toggle-icon:before 
+    transform: translateX(-50%) rotate(45deg)
+    -webkit-transform: translateX(-50%) rotate(45deg) 
+
+
+.mobile-toggle:checked ~ .mobile-toggle-label .mobile-toggle-icon:after 
+    transform: translateX(-50%) translateY(-10px) rotate(-45deg)
+    -webkit-transform: translateX(-50%) translateY(-10px) rotate(-45deg)
+    top: 10px 
+    
+    
+    
+    
+    
+
+.mobile-nav 
+    position: fixed
+    top: 0
+    right: 0
+    z-index: 1
+    height: 100%
+    visibility: hidden
+    transition-property: all
+    transition-duration: 500ms
+    transition-timing-function: cubic-bezier(.39,.04,.3,.96)
+    height: 100%
+    width: 90%
+    background-color: $blue
+    
+    ul
+        margin-top: 12%
+        
+        li
+            a
+                display: block
+                text-align:center
+                padding: 12px 0
+                margin-right: 15%
+                font-weight: 100
+                letter-spacing: 1px
+                
+                
+            a:link, a:visited
+                color: $white
+                
+                
+
+
+.mobile-toggle:checked ~ .mobile-overlay 
+    right: 100%
+
+
+
+
+.mobile-toggle:checked ~ .mobile-overlay 
+    width: 100%
+    height: 100%
+    opacity: 1
+    z-index: 2
+    
+[data-effect='mobile-slide'] .mobile-nav 
+    z-index: 3
+    transition-duration: 500ms
+
+
+[data-effect='mobile-slide'] .mobile-nav 
+    -webkit-transform: translate3d(900%, 0, 0)
+    transform: translate3d(900%, 0, 0) 
+
+
+[data-effect='mobile-slide'] .mobile-toggle:checked ~ .mobile-nav
+    visibility: visible
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+
+/* OVERLAY */
+[data-effect='mobile-slide'] .mobile-overlay  
+    transition-duration: 500ms
+    transition-delay: 250ms
+
+
 
 //--------------------------------------------------------------
 //  Hero Area
@@ -413,7 +599,7 @@ main
         display: block
         margin: 0 auto
         width: 100%
-        margin-bottom: 34px;
+        margin-bottom: 34px
 
 
         a
@@ -485,7 +671,7 @@ main
     ul
         
         li
-            margin: 26px 0 26px 0;
+            margin: 26px 0 26px 0
             
             a
                 color: $green

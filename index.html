@@ -8,10 +8,33 @@
         <link rel="stylesheet" href="css/stylesheet.css">
     </head>
     <body>
+    <div class="mobile-container" data-effect="mobile-slide">
+        
+        <div class="for-mobile-only">
+            <input type="checkbox" id="mobile-menu" class="mobile-toggle"/>
+                <label class="mobile-toggle-label" for="mobile-menu">
+                    <span class="mobile-toggle-icon"></span>
+                </label>
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Programs and Studies</a></li>
+                    <li><a href="#">Transportation Plan</a></li>
+                    <li><a href="#">Funding</a></li>
+                    <li><a href="#">Maps/Data</a></li>
+                    <li><a href="#">Get Involved</a></li>
+                        <li><a href="#">Projects &amp; Initiatives</a></li>
+                        <li><a href="#">Acronyms</a></li>
+                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
         
         <header id="site-header">
             
                 <a href="index.html"><img id="logo" src="img/campo-logo.png" alt=""></a>
+            
             
             <nav class="utility-nav">
                     
@@ -59,8 +82,16 @@
                     <li><a href="#">Funding</a></li>
                     <li><a href="#">Maps/Data</a></li>
                     <li><a href="#">Get Involved</a></li>
+                    <div class="for-mobile-only">
+                        <li><a href="#">Projects &amp; Initiatives</a></li>
+                        <li><a href="#">Acronyms</a></li>
+                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </div>
                 </ul>
             </nav>
+            
+            
             
         </header>
         
@@ -340,6 +371,6 @@
         </footer>
         
 
-
+    </div>
     </body>
 </html>
