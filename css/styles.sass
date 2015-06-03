@@ -145,6 +145,12 @@ article
     @include tablet
         height: 90px
         
+    @media (max-width:1068px)
+        height: 100px
+        
+    @media (min-width:767px) and (max-width:940px)
+        height: 60px
+        
     
 
     #logo
@@ -152,24 +158,9 @@ article
         position: absolute
         top: 0
         left: 0
-        z-index: 999
+        z-index: 999 
+        height: 100%
         
-        
-
-            
-        @include tablet
-            height: 90px
-            width: auto
-            
-    @media (max-width: 892px)
-            #logo
-                height: 37px
-                width: auto
-            
-            .main-nav
-                clear: both
-                display: block
-                margin: 0 auto
 
 
         
@@ -183,63 +174,77 @@ article
         width: 100%
         border-bottom: $border
         height: 40% 
+        
+        @media (min-width:767px) and (max-width:940px)
+            height: 100%
     
         ul
             margin: 0 15em
-            padding-top: 20px
+            padding-top: 17px
             float: right
                 
-            @include tablet
-                margin: 0 9em
+            @media (min-width:940px) and (max-width:1068px)
+                padding: 10px
+                margin: 0 9.4em
+                
+            @media (min-width:767px) and (max-width:940px)
+                height: 100%
+                line-height: 27px
+                margin: 0 32px
                 
             li
                 font-size: 12px
                 font-weight: 300
                 margin-right: 18px
                 
-                @media (max-width:1206px)
-                    font-size: 11px
-                    margin-right: 13px
-            
-
                 a:link, a:visited
                     color: #4d4d4c
                 a:hover
-                    border-bottom: 1px solid $yellow
-                    
+                    //border-bottom: 1px solid $yellow
+                
+                @media (max-width:1206px)
+                    margin-right: 13px
+                    font-size: 12px
+  
         
             .utility-link-icons
                 margin-top: -30px
                 top: 0
                 
+                
                 ul
                     padding: 0
                     margin: 0
                     position: absolute
-                    top: -5px
-                    right: 0
+                    top: -3px
+                    right: 0              
 
                     li
                         margin: 0
 
-
                         a
                             display: inline-block
                             border-left: $border
-                            height: 100%
-                            width: 60px
+                            text-align: center
+                            padding: 16px
+                            width: 28px
                             
-                            @include tablet
-                                width: 30px
-
-
-                            img
+                            @media (min-width:940px) and (max-width:1068px)
+                                width: 18px
+                                padding: 9px
+                            
+                            @media (max-width:939px)
                                 display: block
-                                margin: 0 auto
-                                padding: 18px
+                                position: relative
+                                background: $white
+                                height: 14px
+                                z-index: 100
+                                padding: 9px 2px
                                 
-                                @include tablet
-                                    padding: 8px
+                                img
+                                    max-width: 35px
+                                    height: auto
+                                
 
                         #search
                             background-color: $green
@@ -256,27 +261,42 @@ article
         ul
             float: right
             position: relative
+            
+            @media (min-width:767px) and (max-width:940px)
+                position: absolute
+                width: 100%
+                background: #fff
+                bottom: -28px
+                text-align: center
+                z-index: 99
+                border-top: $border
+                
+                li
+                    //font-size: 12px
                 
             li
                 margin: 4px 26px 4px 0
                 font-size: 14px
                 line-height: 80px
                 
-                @media (min-width: 893px) and (max-width:1206px)
-                    font-size: 11px
+                a:link, a:visited
+                    color: $black
+                
+                @media (max-width:1068px)
+                    line-height: 64px
+                
+                
+                @media (max-width:1206px)
+                    font-size: 12px
                     margin: 0 18 0 0 
                     
-            @media (max-width: 892px)
-                li
+                @media (max-width:978px)
+                    font-size: 11px
+                    
+                    
+                @media (min-width:767px) and (max-width:940px)
                     font-size: 12px
-                
-                a:link, a:visited
-                    color: $black 
-                
-                
-    
-
-
+                    
 
 //--------------------------------------------------------------
 //  Hero Area
@@ -285,12 +305,18 @@ article
 .hero
     height: 45%
     width: 100%
-    @include background( url(/img/placeholder.jpg) no-repeat center center)
+    @include background( url(../img/placeholder.jpg) no-repeat center center)
     background-size: cover
     color: $white
     position: relative
     
-    
+    .overlay
+        position: absolute
+        height: 100%
+        width: 100%
+        background-color: rgba(0,0,0,0.4)
+        
+        
     .hero-info
         position: absolute
         max-width: 1024px
@@ -309,7 +335,7 @@ article
     
     p
         color: $yellow
-        margin: 0
+        margin-bottom: -10px
         
     
     h1
@@ -479,7 +505,10 @@ main
                 font-weight: 300
                 font-size: 14px
                 
-            @include tablet
+                img
+                    float: right
+                
+            //@include tablet
                 a
                     font-size: 22px
                     padding: 18px 16px 0 16px
@@ -488,13 +517,6 @@ main
                 img
                     margin-top: 8px
                     
-            
-                img
-                    float: right
-                        
-
-
-
 //--------------------------------------------------------------
 //  Connect With Us
 //--------------------------------------------------------------
@@ -653,8 +675,8 @@ footer
 
         a:hover
             color: $yellow
-
-
+        
+        
         .footer-column
             position: relative
             width: 15%
