@@ -22,10 +22,17 @@ body
     @include flex-direction(row) 
    
     position: relative
-    max-width: 1080px
+    max-width: 1024px
     margin: 0 auto
-//    padding: 14px
+
+    @include tablet
+        padding: 8px
+        
+    @include phone
+        padding: 4px
     
+    
+        
     
     
 article,
@@ -161,7 +168,7 @@ article
                 a:link, a:visited
                     color: #4d4d4c
                 a:hover
-                    color: $yellow
+                    border-bottom: 1px solid $yellow
                     
         
             .utility-link-icons
@@ -235,9 +242,9 @@ article
     
     .hero-info
         position: absolute
-        max-width: 960px
+        max-width: 1024px
         padding: 8px
-        width: 100%
+        width: 90%
         bottom: 10%
         left: 0
         right: 0

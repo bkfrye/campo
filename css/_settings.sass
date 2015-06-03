@@ -8,4 +8,25 @@ $grey: #696969
 $border: 1px solid #e4e4e4
 
     
+//media queries
+$tablet: "(min-width: 768px) and (max-width: 1023px)"
+$desktop: "(min-width: 1024px)"
 
+//$phone-width: 568px 
+$tablet-width: 768px
+$desktop-width: 1024px
+    
+
+//portrait styles only
+@mixin phone 
+    @media (max-width: $tablet-width - 1px) 
+        @content
+
+@mixin tablet 
+    @media (min-width: $tablet-width) and (max-width: $desktop-width - 1px) 
+        @content
+
+
+@mixin desktop 
+    @media (min-width: $desktop-width) 
+        @content
